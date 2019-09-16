@@ -2,6 +2,7 @@
 #include <fstream>
 #include "QuadraticProbingHashTable.h"
 #include "Restauraunt.h"
+#include "Menu.h"
 
 using namespace std;
 
@@ -21,6 +22,8 @@ int main(int argc, char *argv[]) {
     int rating = 0;
     string priceString = "";
     int price = 0;
+
+    QuadraticProbingHashTable quadTable;
     while(myFile.good()){
         myFile >> name;
         name.pop_back();
@@ -33,9 +36,13 @@ int main(int argc, char *argv[]) {
             price = 3;
         }
 
-    Restauraunt* tempRestauraunt = new Restauraunt(name, rating, price);
-
+        Restauraunt tempRestauraunt(name, rating, price);
+        quadTable.insert(tempRestauraunt);
     }
+    quadTable.print();
+    Menu  mainMenu(quadTable);
+    mainMenu.run();
+
     return 0;
 }
 
