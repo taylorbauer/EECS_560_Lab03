@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include <sstream>
+#include "QuadraticProbingHashTable.h"
+#include "Restauraunt.h"
 
 using namespace std;
 
@@ -28,6 +29,11 @@ int main(int argc, char *argv[]) {
         myFile >> priceString;
         rating = stoi(ratingString);
         price = priceString.length();
+        if (price > 3) {
+            price = 3;
+        }
+
+    Restauraunt* tempRestauraunt = new Restauraunt(name, rating, price);
 
     }
     return 0;
