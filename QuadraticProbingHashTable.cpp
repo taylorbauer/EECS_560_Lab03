@@ -9,7 +9,7 @@ QuadraticProbingHashTable::QuadraticProbingHashTable() {
 }
 
 QuadraticProbingHashTable::~QuadraticProbingHashTable(){
-    std::cout << m_table[1].getName();
+    delete[] m_table;
 }
 
 bool QuadraticProbingHashTable::insert(Restauraunt entry) {

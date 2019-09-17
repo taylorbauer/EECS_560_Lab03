@@ -9,7 +9,7 @@ DoubleHashTable::DoubleHashTable() {
 }
 
 DoubleHashTable::~DoubleHashTable() {
-
+    delete[] m_table;
 }
 
 bool DoubleHashTable::insert(Restauraunt entry){
