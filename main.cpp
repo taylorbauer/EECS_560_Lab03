@@ -24,6 +24,8 @@ int main(int argc, char *argv[]) {
     int price = 0;
 
     QuadraticProbingHashTable quadTable;
+    DoubleHashTable doubleTable;
+
     while(myFile.good()){
         myFile >> name;
         name.pop_back();
@@ -38,9 +40,11 @@ int main(int argc, char *argv[]) {
 
         Restauraunt tempRestauraunt(name, rating, price);
         quadTable.insert(tempRestauraunt);
+        doubleTable.insert(tempRestauraunt);
     }
     quadTable.print();
-    Menu  mainMenu(quadTable);
+    doubleTable.print();
+    Menu  mainMenu(quadTable, doubleTable);
     mainMenu.run();
 
     return 0;

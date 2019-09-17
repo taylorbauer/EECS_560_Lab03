@@ -6,8 +6,9 @@
 
 using namespace std;
 
-Menu::Menu(QuadraticProbingHashTable quadTable) {
+Menu::Menu(QuadraticProbingHashTable quadTable, DoubleHashTable doubleTable) {
     m_quadTable = quadTable;
+    m_doubleTable = doubleTable;
 }
 
 void Menu::run() {
@@ -55,6 +56,13 @@ void Menu::run() {
                 }
                 Restauraunt tempRestauraunt(name, rating, price);
                 if(m_quadTable.insert(tempRestauraunt)) {
+                    cout << endl << name << " inserted successfully using quadratic probing!\n";
+                }
+                else {
+                    cout << endl << "Unable to insert " << name << " using quadratic probing, either quadratic probing has failed or it is a duplicate.\n";
+                }
+                
+                if(m_doubleTable.insert(tempRestauraunt)) {
                     cout << endl << name << " inserted successfully using double hashing!\n";
                 }
                 else {
@@ -73,6 +81,13 @@ void Menu::run() {
                 cout << deletion << " was unable to be found on quadratic probing table, and was not deleted.\n";
             }
 
+            if (m_doubleTable.remove(deletion)) {
+                cout << deletion << " has been successfully deleted from double hashing table.\n";
+            }
+            else {
+                cout << deletion << " was unable to be found on double hashing table, and was not deleted.\n";
+            }
+
         }
         else if (selection == 3) {
             string searchKey = "";
@@ -86,6 +101,14 @@ void Menu::run() {
             else {
                 cout << searchKey << " was not found on the quadratic probing table";
             }
+
+            searchResult = m_doubleTable.searchByName(searchKey);
+            if (searchResult != -1) {
+                cout << searchKey << " was found at position " << searchResult << " on the double hashing table.\n";
+            }
+            else {
+                cout << searchKey << " was not found on the double hashing table";
+            }
         }
 
         else if (selection == 4) {
@@ -94,6 +117,7 @@ void Menu::run() {
             cin >> searchKey;
 
             m_quadTable.searchByRating(searchKey);
+            m_doubleTable.searchByRating(searchKey);
 
         }
         else if (selection == 5) {
@@ -104,10 +128,13 @@ void Menu::run() {
             searchKey = input.length();
 
             m_quadTable.searchByPrice(searchKey);
+            m_doubleTable.searchByPrice(searchKey);
         }
 
         else if (selection == 6) {
             m_quadTable.print();
+            cout << endl;
+            m_doubleTable.print();
         }
     }
 }

@@ -6,6 +6,7 @@
         "ios": "cpp",
         "istream": "cpp",
         "__hash_table": "cpp",
-        "algorithm": "cpp"
+        "algorithm": "cpp",
+        "ostream": "cpp"
     }
 }

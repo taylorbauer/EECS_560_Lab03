@@ -58,6 +58,7 @@ int QuadraticProbingHashTable::recursiveHash(string name, int originalIndex, int
 }
 
 void QuadraticProbingHashTable::print() {
+    cout << "Quadratic probing table:\n";
     for (int i = 0; i < m_tableSize; i++) {
         if (!m_table[i].empty) {
             cout << i << ": " << m_table[i].getName() << ' ' << m_table[i].getRating() << ' ' << m_table[i].priceToString() << endl;
