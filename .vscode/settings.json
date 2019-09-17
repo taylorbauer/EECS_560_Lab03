@@ -4,6 +4,8 @@
         "iostream": "cpp",
         "string": "cpp",
         "ios": "cpp",
-        "istream": "cpp"
+        "istream": "cpp",
+        "__hash_table": "cpp",
+        "algorithm": "cpp"
     }
 }

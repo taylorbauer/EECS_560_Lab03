@@ -1,5 +1,5 @@
-Lab2: main.o QuadraticProbingHashTable.o Restauraunt.o Menu.o
-	g++ -std=c++11 main.o QuadraticProbingHashTable.o Restauraunt.o Menu.o -o Lab2
+Lab3: main.o QuadraticProbingHashTable.o Restauraunt.o Menu.o
+	g++ -std=c++11 main.o QuadraticProbingHashTable.o Restauraunt.o Menu.o -o Lab3
 main.o: main.cpp
 	g++ -std=c++11 -c main.cpp
 QuadraticProbingHashTable.o: QuadraticProbingHashTable.cpp QuadraticProbingHashTable.h

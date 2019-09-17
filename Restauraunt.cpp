@@ -6,9 +6,11 @@ Restauraunt::Restauraunt(string name, int rating, int price){
     m_rating = rating;
     m_price = price;
     empty = false;
+    onceFilled = true;
 }
 Restauraunt::Restauraunt() {
     empty = true;
+    onceFilled = false;
 }
 Restauraunt::~Restauraunt() {
     

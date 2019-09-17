@@ -13,6 +13,7 @@ class Restauraunt {
     int getRating();
     int getPrice();
     bool empty;
+    bool onceFilled;
     string priceToString();
     
 

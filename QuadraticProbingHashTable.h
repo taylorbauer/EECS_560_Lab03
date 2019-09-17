@@ -8,11 +8,17 @@ class QuadraticProbingHashTable{
     ~QuadraticProbingHashTable();
     bool insert(Restauraunt entry);
     void print();
+    bool remove(string name);
+    int searchByName(string name);
+    void searchByRating(int rating);
+    void searchByPrice(int price);
 
 
     private:
     int hashFunction(string name);
+    int hashFunctionForSearch(string name);
     int recursiveHash(string name, int orginalIndex, int iteration);
+    int recursiveHashForSearch(string name, int originalIndex, int iteration);
     int m_tableSize;
     int m_R;
     Restauraunt* m_table;
