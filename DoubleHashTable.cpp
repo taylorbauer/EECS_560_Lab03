@@ -24,7 +24,7 @@ bool DoubleHashTable::insert(Restauraunt entry){
 
 bool DoubleHashTable::remove(string name) {
     int index = hashFunctionForSearch(name);
-    cout << "HASH FUNCTION IS RETURNING " << index;
+    //cout << "HASH FUNCTION IS RETURNING " << index;
     if (index != -1) {
         Restauraunt tempstauraunt;
         m_table[index] = tempstauraunt;
@@ -156,8 +156,13 @@ int DoubleHashTable::recursiveHashForSearch(string name, int originalIndex,int i
 
 void DoubleHashTable::print() {
     cout << "Double hashing table:\n";
+    int lastPrint = 0;
     for (int i = 0; i < m_tableSize; i++) {
-        if (!m_table[i].empty) {
+        if (!m_table[i].empty && i != 0) {   //TODO: Fix bug with printing even when m_table[0] is empty
+            if (i - lastPrint > 1) {
+                 cout << ".\n.\n";
+            }
+            lastPrint = i;
             cout << i << ": " << m_table[i].getName() << ' ' << m_table[i].getRating() << ' ' << m_table[i].priceToString() << endl;
         }
     }

@@ -42,8 +42,6 @@ int main(int argc, char *argv[]) {
         quadTable.insert(tempRestauraunt);
         doubleTable.insert(tempRestauraunt);
     }
-    quadTable.print();
-    doubleTable.print();
     Menu  mainMenu(quadTable, doubleTable);
     mainMenu.run();
 
