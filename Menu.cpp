@@ -54,6 +54,15 @@ void Menu::run() {
                 if (price > 3) {
                     price = 3;
                 }
+                else if (price < 1) {
+                    price = 1;
+                }
+                if (rating > 5) {
+                    rating = 5;
+                }
+                else if (rating < 1) {
+                    rating = 1;
+                }
                 Restauraunt tempRestauraunt(name, rating, price);
                 if(m_quadTable.insert(tempRestauraunt)) {
                     cout << endl << name << " inserted successfully using quadratic probing!\n";

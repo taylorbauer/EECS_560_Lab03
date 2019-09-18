@@ -158,7 +158,7 @@ void DoubleHashTable::print() {
     cout << "Double hashing table:\n";
     int lastPrint = 0;
     for (int i = 0; i < m_tableSize; i++) {
-        if (!m_table[i].empty && i != 0) {   //TODO: Fix bug with printing even when m_table[0] is empty
+        if (!m_table[i].isEmpty() && m_table[i].getRating() != 0) {   //TODO: Fix bug with printing even when m_table[0] is empty
             if (i - lastPrint > 1) {
                  cout << ".\n.\n";
             }

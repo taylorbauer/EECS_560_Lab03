@@ -21,6 +21,7 @@ class Restauraunt {
     string getName();
     int getRating();
     int getPrice();
+    bool isEmpty();
 
     //  Tracks weather or not a restauraunt is "empty"
     //  i.e., nothing is occupying the space on the array

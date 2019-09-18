@@ -6,6 +6,10 @@ QuadraticProbingHashTable::QuadraticProbingHashTable() {
     m_tableSize = 31;
     m_R = 29;
     m_table = new Restauraunt[m_tableSize];
+    for (int i = 0; i < m_tableSize; i ++) {
+        Restauraunt tempRestauraunt;
+        m_table[i] = tempRestauraunt;
+    }
 }
 
 QuadraticProbingHashTable::~QuadraticProbingHashTable(){
@@ -60,8 +64,8 @@ int QuadraticProbingHashTable::recursiveHash(string name, int originalIndex, int
 void QuadraticProbingHashTable::print() {
     cout << "Quadratic probing table:\n";
     int lastPrint = 0;
-    for (int i = 0; i < m_tableSize; i++) {
-        if (!m_table[i].empty) {
+    for (int i = 1; i < m_tableSize; i++) {  // TODO: Solve bug when i = 0
+        if (!m_table[i].isEmpty() && m_table[i].getRating() != 0) { 
             if (i - lastPrint > 1) {
                 cout << ".\n.\n";
             }

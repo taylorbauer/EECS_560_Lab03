@@ -11,6 +11,7 @@ Restauraunt::Restauraunt(string name, int rating, int price){
 Restauraunt::Restauraunt() {
     empty = true;
     onceFilled = false;
+    m_rating = 0;
 }
 Restauraunt::~Restauraunt() {
     
@@ -26,6 +27,10 @@ int Restauraunt::getRating() {
 
 int Restauraunt::getPrice() {
     return m_price;
+}
+
+bool Restauraunt::isEmpty() {
+    return empty;
 }
 
 string Restauraunt::priceToString() {
